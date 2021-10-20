@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="feed"
+            type="com.ibrahim.nbafacts.model.FeedModel" />
+
+        <variable
+            name="listener"
+            type="com.ibrahim.nbafacts.adapter.ClickListener" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:onClick="@{listener::onItemClick}">
+
+        <TextView
+            android:id="@+id/feedIdText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(feed.id)}"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/itemImageview"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_centerInParent="true"
+            android:downloadUrl="@{feed.link}" />
+
+        <TextView
+            android:id="@+id/itemTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/itemImageview"
+            android:layout_alignBottom="@id/itemImageview"
+            android:layout_gravity="center_horizontal"
+            android:text="@{feed.title}"
+            android:textColor="#ffffffff"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+</layout>
