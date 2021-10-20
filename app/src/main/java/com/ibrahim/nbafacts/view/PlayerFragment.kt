@@ -38,6 +38,7 @@ class PlayerFragment : Fragment() {
         observeLiveData()
         swipeRefreshPlayer.setOnRefreshListener {
             observeLiveData()
+            swipeRefreshPlayer.isRefreshing = false
         }
     }
 

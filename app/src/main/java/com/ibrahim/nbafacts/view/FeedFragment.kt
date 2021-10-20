@@ -12,6 +12,7 @@ import com.ibrahim.nbafacts.R
 import com.ibrahim.nbafacts.adapter.FeedAdapter
 import com.ibrahim.nbafacts.viewmodel.FeedViewModel
 import kotlinx.android.synthetic.main.fragment_feed.*
+import kotlinx.android.synthetic.main.fragment_player.*
 
 
 class FeedFragment : Fragment() {
@@ -37,7 +38,8 @@ class FeedFragment : Fragment() {
         observeLiveData()
 
         swipeRefreshFeed.setOnRefreshListener {
-
+            observeLiveData()
+            swipeRefreshFeed.isRefreshing = false
         }
     }
 

@@ -38,6 +38,10 @@ class TeamsFragment : Fragment() {
         teamsRecView.layoutManager = LinearLayoutManager(context)
         teamsRecView.adapter = teamsAdapter
         observeLiveData()
+        swipeRefreshTeam.setOnRefreshListener {
+            observeLiveData()
+            swipeRefreshTeam.isRefreshing = false
+        }
     }
 
     private fun observeLiveData() {

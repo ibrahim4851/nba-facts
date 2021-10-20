@@ -14,6 +14,7 @@ import com.ibrahim.nbafacts.R
 import com.ibrahim.nbafacts.adapter.GamesAdapter
 import com.ibrahim.nbafacts.viewmodel.GamesViewModel
 import kotlinx.android.synthetic.main.fragment_stats.*
+import kotlinx.android.synthetic.main.fragment_teams.*
 
 
 class GamesFragment : Fragment() {
@@ -37,6 +38,10 @@ class GamesFragment : Fragment() {
         gamesRecView.layoutManager = LinearLayoutManager(context)
         gamesRecView.adapter = gamesAdapter
         observeLiveData()
+        swipeRefreshStats.setOnRefreshListener {
+            observeLiveData()
+            swipeRefreshStats.isRefreshing = false
+        }
 
     }
 
