@@ -12,7 +12,7 @@ import retrofit2.http.Query
 interface NBAApi {
 
     @GET("players")
-    fun getPlayers(@Query("per_page") perPage: String, @Query("page") page: MutableLiveData<Int>):
+    fun getPlayers(@Query("per_page") perPage: String, @Query("page") page: String):
             Single<PlayerMetaData>
 
     @GET("games")

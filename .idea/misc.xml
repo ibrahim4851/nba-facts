@@ -13,6 +13,7 @@
         <entry key="app/src/main/res/layout/fragment_stats.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_teams.xml" value="0.32382246376811596" />
         <entry key="app/src/main/res/layout/games_item_layout.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/page_picker_layout.xml" value="0.33" />
         <entry key="app/src/main/res/layout/player_item_layout.xml" value="0.1" />
         <entry key="app/src/main/res/layout/team_item_layout.xml" value="0.14722222222222223" />
       </map>

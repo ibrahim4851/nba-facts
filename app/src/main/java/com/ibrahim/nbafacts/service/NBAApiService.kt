@@ -21,7 +21,7 @@ class NBAApiService {
     build().
     create(NBAApi::class.java)
 
-    fun getPlayers(page: MutableLiveData<Int>): Single<PlayerMetaData>{
+    fun getPlayers(page: String): Single<PlayerMetaData>{
         return api.getPlayers("9", page)
     }
 
