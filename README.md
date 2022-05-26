@@ -4,6 +4,12 @@
 ## 📢📢Announcement
 ### There are many code snippets in my project that's so similar. I'm looking for your help to minimize these functions.
 
+## I will add these following features:
+  * Clicking on RecyclerView items will send to another fragment that shows details about it (Each Fragment)
+  * Search for a team
+  * Seasons
+  * ...
+
 ## Motivation
 I always think that there's always better. This also applies to application developing. Therefore, I wanted to upgrade my quality of code,
 so I started this project which includes MVVM, DataBinding, Navigation and RxJava.
