@@ -8,7 +8,7 @@
   * Clicking on RecyclerView items will send to another fragment that shows details about it (Each Fragment)
   * Search for a team
   * Seasons
-  * ...
+  * ..and so forth
 
 ## Motivation
 I always think that there's always better. This also applies to application developing. Therefore, I wanted to upgrade my quality of code,
