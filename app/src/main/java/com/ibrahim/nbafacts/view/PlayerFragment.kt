@@ -2,24 +2,23 @@ package com.ibrahim.nbafacts.view
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
+import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.MutableLiveData
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.ibrahim.nbafacts.MainActivity
 import com.ibrahim.nbafacts.R
 import com.ibrahim.nbafacts.adapter.PlayerAdapter
 import com.ibrahim.nbafacts.viewmodel.PlayersViewModel
 import kotlinx.android.synthetic.main.fragment_player.*
 import kotlinx.android.synthetic.main.page_picker_layout.*
 import kotlinx.android.synthetic.main.page_picker_layout.view.*
-import kotlin.math.absoluteValue
-import kotlin.math.log
+
 
 class PlayerFragment : Fragment() {
 
@@ -46,6 +45,7 @@ class PlayerFragment : Fragment() {
         playerRecView.adapter = playerAdapter
 
         swipeRefreshPlayer.setOnRefreshListener {
+            viewModel.getData()
             observeLiveData()
             swipeRefreshPlayer.isRefreshing = false
         }
@@ -71,6 +71,20 @@ class PlayerFragment : Fragment() {
         playerCurrentPage.setOnClickListener {
             openBottomDialog()
         }
+
+        searchPlayer.setOnKeyListener(object : View.OnKeyListener {
+            override fun onKey(v: View?, keyCode: Int, event: KeyEvent): Boolean {
+                // If the event is a key-down event on the "enter" button
+                if (event.action == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
+                    Log.i("edittextdata", searchPlayer.text.toString())
+                    viewModel.searchQuery.value = searchPlayer.text.toString()
+                    viewModel.searchPlayer()
+                    observeLiveData()
+                    return true
+                }
+                return false
+            }
+        })
 
     }
 

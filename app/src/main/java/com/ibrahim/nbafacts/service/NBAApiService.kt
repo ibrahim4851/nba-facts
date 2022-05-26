@@ -22,15 +22,19 @@ class NBAApiService {
     create(NBAApi::class.java)
 
     fun getPlayers(page: String): Single<PlayerMetaData>{
-        return api.getPlayers("9", page)
+        return api.getPlayers("15", page)
     }
 
-    fun getGames(page: MutableLiveData<Int>): Single<GameMetaData>{
-        return api.getGames("9", page)
+    fun searchPlayer(name: String): Single<PlayerMetaData>{
+        return api.searchPlayer("15", name)
     }
 
-    fun getTeams(page: MutableLiveData<Int>): Single<TeamMetaData>{
-        return api.getTeams("9", page)
+    fun getGames(page: String): Single<GameMetaData>{
+        return api.getGames("15", page)
+    }
+
+    fun getTeams(page: String): Single<TeamMetaData>{
+        return api.getTeams("15", page)
     }
 
 }

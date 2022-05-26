@@ -23,7 +23,7 @@ class GamesViewModel(application: Application): BaseViewModel(application) {
     fun getData(){
         gamesLoading.value = true
         disposable.add(
-                nbaApiService.getGames(page)
+                nbaApiService.getGames(page.value.toString())
                         .subscribeOn(Schedulers.newThread())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribeWith(object : DisposableSingleObserver<GameMetaData>(){

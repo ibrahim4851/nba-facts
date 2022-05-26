@@ -23,7 +23,7 @@ class TeamsViewModel(application: Application): BaseViewModel(application) {
     fun getData(){
         teamsLoading.value = true
         disposable.add(
-            nbaApiService.getTeams(page)
+            nbaApiService.getTeams(page.value.toString())
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(object : DisposableSingleObserver<TeamMetaData>(){
@@ -31,13 +31,6 @@ class TeamsViewModel(application: Application): BaseViewModel(application) {
                         teamsList.value = t.team
                         teamsError.value = false
                         teamsLoading.value = false
-                        //val gson = Gson()
-                        //teamsString.value = t.dataClass
-                        //teamsList.value = t.dataClass
-                        //teamsList.value = Json.decodeFromString(teamsString.toString())
-                        //teamsList.value = gson.fromJson(teamsString.toString(), object : TypeToken<List<Team?>?>(){}.type)
-                        //teamsList.value = gson.fromJson(teamsString.toString(), listOf<Array>(Team::class.java))
-                        //println("teamslist:\n" + teamsString.toString())
                     }
                     override fun onError(e: Throwable) {
                         teamsLoading.value = false

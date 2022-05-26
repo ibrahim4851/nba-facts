@@ -15,11 +15,15 @@ interface NBAApi {
     fun getPlayers(@Query("per_page") perPage: String, @Query("page") page: String):
             Single<PlayerMetaData>
 
+    @GET("players")
+    fun searchPlayer(@Query("per_page") perPage: String, @Query("search") searchQuery: String):
+            Single<PlayerMetaData>
+
     @GET("games")
-    fun getGames(@Query("per_page")perPage: String, @Query("page") page: MutableLiveData<Int>):
+    fun getGames(@Query("per_page")perPage: String, @Query("page") page: String):
             Single<GameMetaData>
 
     @GET("teams")
-    fun getTeams(@Query("per_page")perPage: String, @Query("page") page: MutableLiveData<Int>):
+    fun getTeams(@Query("per_page")perPage: String, @Query("page") page: String):
             Single<TeamMetaData>
 }

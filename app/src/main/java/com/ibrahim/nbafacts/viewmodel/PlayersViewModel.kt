@@ -11,9 +11,10 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
 
-class PlayersViewModel(application: Application) : BaseViewModel(application){
+class PlayersViewModel(application: Application) : BaseViewModel(application) {
 
     private val nbaApiService = NBAApiService()
+
     // 'disposable' method makes it disposable the retrofit calls
     private val disposable = CompositeDisposable()
 
@@ -22,14 +23,15 @@ class PlayersViewModel(application: Application) : BaseViewModel(application){
     val playersError = MutableLiveData<Boolean>()
     var page = MutableLiveData<Int>()
     var totalPage = MutableLiveData<Int>()
+    var searchQuery = MutableLiveData<String>()
 
-    fun getData(){
+    fun getData() {
         playersLoading.value = true
         disposable.add(
             nbaApiService.getPlayers(page.value.toString())
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribeWith(object : DisposableSingleObserver<PlayerMetaData>(){
+                .subscribeWith(object : DisposableSingleObserver<PlayerMetaData>() {
                     override fun onSuccess(t: PlayerMetaData) {
                         playersList.value = t.player
                         page.value = t.meta.currentPage.toInt()
@@ -37,6 +39,33 @@ class PlayersViewModel(application: Application) : BaseViewModel(application){
                         playersError.value = false
                         playersLoading.value = false
                     }
+
+                    override fun onError(e: Throwable) {
+                        playersLoading.value = false
+                        playersError.value = true
+                    }
+                })
+        )
+    }
+
+
+    fun searchPlayer() {
+        playersLoading.value = true
+        disposable.add(
+            nbaApiService.searchPlayer(searchQuery.value.toString())
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeWith(object : DisposableSingleObserver<PlayerMetaData>() {
+                    override fun onSuccess(t: PlayerMetaData) {
+                        playersList.value = t.player
+                        Log.i("totalcount", t.meta.totalCount)
+                        Log.i("searchplayer", searchQuery.value.toString())
+                        page.value = t.meta.currentPage.toInt()
+                        totalPage.value = t.meta.totalPages.toInt()
+                        playersError.value = false
+                        playersLoading.value = false
+                    }
+
                     override fun onError(e: Throwable) {
                         playersLoading.value = false
                         playersError.value = true
