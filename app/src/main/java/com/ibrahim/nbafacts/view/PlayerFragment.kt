@@ -50,7 +50,7 @@ class PlayerFragment : Fragment() {
             swipeRefreshPlayer.isRefreshing = false
         }
 
-        next.setOnClickListener {
+        nextPlayer.setOnClickListener {
             viewModel.page.value?.let {
                 viewModel.page.value = viewModel.page.value?.inc()
                 playerCurrentPage.text = viewModel.page.value.toString()
@@ -59,7 +59,7 @@ class PlayerFragment : Fragment() {
             observeLiveData()
         }
 
-        previous.setOnClickListener {
+        previousPlayer.setOnClickListener {
             viewModel.page.value?.let {
                 viewModel.page.value = viewModel.page.value?.dec()
                 playerCurrentPage.text = viewModel.page.value.toString()

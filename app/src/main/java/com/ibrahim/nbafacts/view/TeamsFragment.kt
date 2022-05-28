@@ -47,7 +47,6 @@ class TeamsFragment : Fragment() {
     private fun observeLiveData() {
         viewModel.teamsList.observe(viewLifecycleOwner, Observer { teamsList ->
             teamsList?.let {
-                //print("fragmentvalue:\n" + teamsList[0].fullName)
                 teamsAdapter.updateTeamsList(teamsList)
                 teamsRecView.visibility = View.VISIBLE
             }
