@@ -29,13 +29,13 @@ class TeamsViewModel(application: Application): BaseViewModel(application) {
                 .subscribeWith(object : DisposableSingleObserver<TeamMetaData>(){
                     override fun onSuccess(t: TeamMetaData) {
                         teamsList.value = t.team
+                        page.value = t.meta.currentPage.toInt()
                         teamsError.value = false
                         teamsLoading.value = false
                     }
                     override fun onError(e: Throwable) {
                         teamsLoading.value = false
                         teamsError.value = true
-                        println("error")
                         e.printStackTrace()
                     }
                 })

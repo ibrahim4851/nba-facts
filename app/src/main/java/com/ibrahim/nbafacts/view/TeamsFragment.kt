@@ -42,6 +42,22 @@ class TeamsFragment : Fragment() {
             observeLiveData()
             swipeRefreshTeam.isRefreshing = false
         }
+        nextTeam.setOnClickListener {
+            viewModel.page.value?.let {
+                viewModel.page.value = viewModel.page.value?.inc()
+                teamCurrentPage.text = viewModel.page.value.toString()
+            }
+            viewModel.getData()
+            observeLiveData()
+        }
+        previousTeam.setOnClickListener {
+            viewModel.page.value?.let {
+                viewModel.page.value = viewModel.page.value?.dec()
+                teamCurrentPage.text = viewModel.page.value.toString()
+            }
+            viewModel.getData()
+            observeLiveData()
+        }
     }
 
     private fun observeLiveData() {
