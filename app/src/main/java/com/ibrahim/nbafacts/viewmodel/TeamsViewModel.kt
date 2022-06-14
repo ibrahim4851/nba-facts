@@ -14,7 +14,6 @@ class TeamsViewModel(application: Application): BaseViewModel(application) {
     private val nbaApiService = NBAApiService()
     private val disposable = CompositeDisposable()
 
-    //val teamsString = MutableLiveData<JsonArray>()
     val teamsList = MutableLiveData<List<Team>>()
     val teamsLoading = MutableLiveData<Boolean>()
     val teamsError = MutableLiveData<Boolean>()
