@@ -89,7 +89,7 @@ class TeamsFragment : Fragment() {
         })
         viewModel.totalPage.observe(viewLifecycleOwner, Observer { totalPage->
             totalPage?.let {
-
+                bottomSheetView.pagePicker.maxValue = totalPage
             }
         })
         viewModel.teamsError.observe(viewLifecycleOwner, Observer { error ->
