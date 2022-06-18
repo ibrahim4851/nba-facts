@@ -18,6 +18,7 @@ class TeamsViewModel(application: Application): BaseViewModel(application) {
     val teamsLoading = MutableLiveData<Boolean>()
     val teamsError = MutableLiveData<Boolean>()
     var page = MutableLiveData<Int>()
+    var totalPage = MutableLiveData<Int>()
 
     fun getData(){
         teamsLoading.value = true
@@ -29,6 +30,7 @@ class TeamsViewModel(application: Application): BaseViewModel(application) {
                     override fun onSuccess(t: TeamMetaData) {
                         teamsList.value = t.team
                         page.value = t.meta.currentPage.toInt()
+                        totalPage.value = t.meta.totalPages.toInt()
                         teamsError.value = false
                         teamsLoading.value = false
                     }
