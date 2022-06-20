@@ -4,6 +4,14 @@
 ## 📢📢Announcement
 ### There are many code snippets in my project that's so similar. I'm looking for your help to minimize these functions.
 
+## Used Technologies:
+* MVVM Architecture
+* RxJava
+* Retrofit
+* DataBinding
+* Glide
+* Navigation
+
 ## I will add these following features:
   * Clicking on RecyclerView items will send to another fragment that shows details about it (Each Fragment)
   * Search for a team
