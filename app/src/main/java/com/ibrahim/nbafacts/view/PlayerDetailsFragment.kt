@@ -5,7 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import com.ibrahim.nbafacts.R
+import com.ibrahim.nbafacts.databinding.FragmentPlayerBinding
+import com.ibrahim.nbafacts.databinding.FragmentPlayerDetailsBinding
+import com.ibrahim.nbafacts.databinding.PlayerItemLayoutBinding
 
 class PlayerDetailsFragment : Fragment() {
 
@@ -14,13 +18,15 @@ class PlayerDetailsFragment : Fragment() {
     //private var position = ""
     //private var weightPounds = ""
     private var teamName = ""
+    private lateinit var playerDataBinding : FragmentPlayerDetailsBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_player_details, container, false)
+        playerDataBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_player_details, container, false)
+        return playerDataBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
