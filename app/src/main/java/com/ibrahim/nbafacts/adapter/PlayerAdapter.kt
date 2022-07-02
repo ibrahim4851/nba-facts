@@ -10,9 +10,11 @@ import com.ibrahim.nbafacts.R
 import com.ibrahim.nbafacts.databinding.PlayerItemLayoutBinding
 import com.ibrahim.nbafacts.model.Player
 import com.ibrahim.nbafacts.view.PlayerFragmentDirections
+import kotlinx.android.synthetic.main.fragment_player_details.view.*
+import kotlinx.android.synthetic.main.player_item_layout.view.*
 
 class PlayerAdapter(val playerList: ArrayList<Player>) :
-    RecyclerView.Adapter<PlayerAdapter.PlayerViewHolder>() {
+    RecyclerView.Adapter<PlayerAdapter.PlayerViewHolder>(), ClickListener {
 
     class PlayerViewHolder(var view: PlayerItemLayoutBinding) : RecyclerView.ViewHolder(view.root)
 
@@ -31,7 +33,7 @@ class PlayerAdapter(val playerList: ArrayList<Player>) :
 
     override fun onBindViewHolder(holder: PlayerViewHolder, position: Int) {
         holder.view.player = playerList[position]
-
+        holder.view.listener = this
         /*
         val firstName = playerList[position].firstName
         val heightFeet = playerList[position].heightFeet
@@ -52,7 +54,8 @@ class PlayerAdapter(val playerList: ArrayList<Player>) :
         )
         holder.view.setOnClickListener {
             Navigation.findNavController(it).navigate(action)
-        }*/
+        }
+         */
     }
 
     override fun getItemCount(): Int {
@@ -63,6 +66,14 @@ class PlayerAdapter(val playerList: ArrayList<Player>) :
         playerList.clear()
         playerList.addAll(newPlayerList)
         notifyDataSetChanged()
+    }
+
+    override fun onItemClick(view: View) {
+        val pHeight = view.playerHeight.toString()
+        val pName = view.title.toString()
+        val pTeam = view.subtitle.toString()
+        val action = PlayerFragmentDirections.actionPlayerFragmentToPlayerDetailsFragment(pName, pHeight, pTeam)
+        Navigation.findNavController(view).navigate(action)
     }
 
 }

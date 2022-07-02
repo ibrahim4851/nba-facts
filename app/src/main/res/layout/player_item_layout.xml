@@ -13,6 +13,7 @@
     </data>
 
     <LinearLayout
+        android:onClick="@{listener::onItemClick}"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -26,6 +27,13 @@
             android:layout_height="wrap_content"
             android:visibility="gone"
             android:text="@{player.id}"/>
+
+        <TextView
+            android:id="@+id/playerHeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:text="@{player.heightFeet}"/>
 
         <TextView
             android:id="@+id/title"

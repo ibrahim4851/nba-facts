@@ -9,12 +9,10 @@ import com.ibrahim.nbafacts.R
 
 class PlayerDetailsFragment : Fragment() {
 
-    private var firstName = ""
+    private var pName = ""
     private var heightFeet = ""
-    private var heightInches = ""
-    private var lastName = ""
-    private var position = ""
-    private var weightPounds = ""
+    //private var position = ""
+    //private var weightPounds = ""
     private var teamName = ""
 
     override fun onCreateView(
@@ -29,16 +27,16 @@ class PlayerDetailsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val args = PlayerDetailsFragmentArgs
         arguments.let {
-            firstName = args.fromBundle(it!!).playerName.toString()
+            pName = args.fromBundle(it!!).playerName.toString()
             heightFeet = args.fromBundle(it!!).heightFeet.toString()
-            heightInches = args.fromBundle(it!!).heightInches.toString()
-            lastName = args.fromBundle(it!!).playerLastName.toString()
-            position = args.fromBundle(it!!).position.toString()
-            weightPounds = args.fromBundle(it!!).weight.toString()
+            //heightInches = args.fromBundle(it!!).heightInches.toString()
+            //lastName = args.fromBundle(it!!).playerLastName.toString()
+            //position = args.fromBundle(it!!).position.toString()
+            //weightPounds = args.fromBundle(it!!).weight.toString()
             teamName = args.fromBundle(it!!).playerTeamName.toString()
         }
 
         println("details: ")
-        println(firstName + "\t" + lastName + teamName+ "\t" + heightFeet + "\t" + position)
+        println(pName + "\t" + teamName+ "\t" + heightFeet)
     }
 }

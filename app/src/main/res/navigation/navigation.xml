@@ -49,27 +49,11 @@
             app:argType="string"
             app:nullable="true" />
         <argument
-            android:name="playerLastName"
-            app:argType="string"
-            app:nullable="true" />
-        <argument
             android:name="heightFeet"
             app:argType="string"
             app:nullable="true" />
         <argument
-            android:name="heightInches"
-            app:argType="string"
-            app:nullable="true" />
-        <argument
-            android:name="position"
-            app:argType="string"
-            app:nullable="true" />
-        <argument
             android:name="playerTeamName"
-            app:argType="string"
-            app:nullable="true" />
-        <argument
-            android:name="weight"
             app:argType="string"
             app:nullable="true" />
     </fragment>

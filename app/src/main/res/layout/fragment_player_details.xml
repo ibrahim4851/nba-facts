@@ -8,7 +8,7 @@
 
 
     <TextView
-        android:id="@+id/playerHeight"
+        android:id="@+id/detailsPlayerHeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -18,10 +18,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playerHeightTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/detailsPlayerHeightTitle" />
 
     <TextView
-        android:id="@+id/playerTeamTitle"
+        android:id="@+id/detailsPlayerTeamTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -29,10 +29,10 @@
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playerName" />
+        app:layout_constraintTop_toBottomOf="@+id/detailsPlayerName" />
 
     <TextView
-        android:id="@+id/playerName"
+        android:id="@+id/detailsPlayerName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -42,10 +42,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playerNameTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/detailsPlayerNameTitle" />
 
     <TextView
-        android:id="@+id/playerNameTitle"
+        android:id="@+id/detailsPlayerNameTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Player Name"
@@ -55,7 +55,7 @@
         tools:layout_editor_absoluteY="141dp" />
 
     <TextView
-        android:id="@+id/playerTeam"
+        android:id="@+id/detailsPlayerTeam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -64,10 +64,10 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playerTeamTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/detailsPlayerTeamTitle" />
 
     <TextView
-        android:id="@+id/playerHeightTitle"
+        android:id="@+id/detailsPlayerHeightTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -75,5 +75,5 @@
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playerTeam" />
+        app:layout_constraintTop_toBottomOf="@+id/detailsPlayerTeam" />
 </androidx.constraintlayout.widget.ConstraintLayout>
