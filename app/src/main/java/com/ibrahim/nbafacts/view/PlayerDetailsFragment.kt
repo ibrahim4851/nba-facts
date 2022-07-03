@@ -10,15 +10,20 @@ import com.ibrahim.nbafacts.R
 import com.ibrahim.nbafacts.databinding.FragmentPlayerBinding
 import com.ibrahim.nbafacts.databinding.FragmentPlayerDetailsBinding
 import com.ibrahim.nbafacts.databinding.PlayerItemLayoutBinding
+import kotlinx.android.synthetic.main.fragment_player_details.*
 
 class PlayerDetailsFragment : Fragment() {
 
-    private var pName = ""
-    private var heightFeet = ""
+    private lateinit var pName : String
+    private lateinit var heightFeet : String
     //private var position = ""
     //private var weightPounds = ""
-    private var teamName = ""
+    private lateinit var teamName : String
     private lateinit var playerDataBinding : FragmentPlayerDetailsBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,17 +37,17 @@ class PlayerDetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val args = PlayerDetailsFragmentArgs
-        arguments.let {
-            pName = args.fromBundle(it!!).playerName.toString()
-            heightFeet = args.fromBundle(it!!).heightFeet.toString()
-            //heightInches = args.fromBundle(it!!).heightInches.toString()
-            //lastName = args.fromBundle(it!!).playerLastName.toString()
-            //position = args.fromBundle(it!!).position.toString()
-            //weightPounds = args.fromBundle(it!!).weight.toString()
-            teamName = args.fromBundle(it!!).playerTeamName.toString()
+        arguments?.let {
+            pName = args.fromBundle(it).playerName.toString()
+            heightFeet = args.fromBundle(it).heightFeet.toString()
+            //heightInches = args.fromBundle(it).heightInches.toString()
+            //lastName = args.fromBundle(it).playerLastName.toString()
+            //position = args.fromBundle(it).position.toString()
+            //weightPounds = args.fromBundle(it).weight.toString()
+            teamName = args.fromBundle(it).playerTeamName.toString()
         }
-
-        println("details: ")
-        println(pName + "\t" + teamName+ "\t" + heightFeet)
+        //detailsPlayerName.text = pName
+        //detailsPlayerHeight.text = heightFeet
+        //detailsPlayerTeam.text = teamName
     }
 }

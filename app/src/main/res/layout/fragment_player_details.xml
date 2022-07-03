@@ -4,86 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="selectedPlayer"
             type="com.ibrahim.nbafacts.model.Player" />
     </data>
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".view.PlayerDetailsFragment">
-
+        android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/detailsPlayerHeight"
-            android:layout_width="wrap_content"
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentTop="false"
+            android:layout_marginTop="152dp"
+            android:gravity="center"
+            android:text="TextView"
+            android:textSize="35sp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentTop="false"
             android:layout_marginTop="15dp"
-            android:text="@{selectedPlayer.heightFeet}"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.501"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/detailsPlayerHeightTitle" />
+            android:gravity="center"
+            android:text="TextView"
+            android:layout_below="@id/textView3"/>
+    </RelativeLayout>
 
-        <TextView
-            android:id="@+id/detailsPlayerTeamTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Player Team / Position"
-            android:textSize="34sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/detailsPlayerName" />
 
-        <TextView
-            android:id="@+id/detailsPlayerName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="@{selectedPlayer.firstName + ` ` + selectedPlayer.firstName}"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/detailsPlayerNameTitle" />
-
-        <TextView
-            android:id="@+id/detailsPlayerNameTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Player Name"
-            android:textSize="34sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="141dp" />
-
-        <TextView
-            android:id="@+id/detailsPlayerTeam"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="@{selectedPlayer.team.fullName + `/` + selectedPlayer.position}"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/detailsPlayerTeamTitle" />
-
-        <TextView
-            android:id="@+id/detailsPlayerHeightTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Height / Weight"
-            android:textSize="34sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/detailsPlayerTeam" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

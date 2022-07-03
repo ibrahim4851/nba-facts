@@ -14,4 +14,30 @@
     <color name="deepOrange">#fbe9e7</color>
     <color name="light">#fff</color>
     <color name="dark">#c6b7b5</color>
+
+    <!--Atlanta Hawks Color:-->
+    <color name="hawksRed">#E03A3E</color>
+    <color name="voltGreen">#C1D32F</color>
+    <color name="hawksCharcoal">#26282A</color>
+
+    <!--Boston Celtics Color:-->
+    <color name="celticsGreen">#007A33</color>
+    <color name="celticsGold">#BA9653</color>
+    <color name="celticsBrown">#963821</color>
+
+    <!--Brooklyn Nets Color:-->
+    <color name="brooklynBlack">#000000</color>
+    <color name="brooklynWhite">#fff</color>
+
+    <!--Charlotte Hornets Color:-->
+    <color name="hornetsPurple">#1D1160</color>
+    <color name="teal">#00788C</color>
+    <color name="hornetsGrey">#A1A1A4</color>
+
+    <!--Chicago Bulls Color:-->
+    <color name="bullsRed">#CE1141</color>
+    <color name="bullsBlack">#000000</color>
+
+
+
 </resources>
