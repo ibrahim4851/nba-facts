@@ -15,28 +15,201 @@
     <color name="light">#fff</color>
     <color name="dark">#c6b7b5</color>
 
-    <!--Atlanta Hawks Color:-->
-    <color name="hawksRed">#E03A3E</color>
-    <color name="voltGreen">#C1D32F</color>
-    <color name="hawksCharcoal">#26282A</color>
+    <!-- ******************************************************************* -->
+    <!--Atlanta Hawks Color-->
+    <color name="TorchRed">#C8102E</color>
+    <color name="LegacyYellow">#FFC72C</color>
+    <color name="AtlantaWhite">#FFFFFF</color>
 
-    <!--Boston Celtics Color:-->
-    <color name="celticsGreen">#007A33</color>
-    <color name="celticsGold">#BA9653</color>
-    <color name="celticsBrown">#963821</color>
 
-    <!--Brooklyn Nets Color:-->
-    <color name="brooklynBlack">#000000</color>
-    <color name="brooklynWhite">#fff</color>
+    <!--Boston Celtics Color-->
+    <color name="CelticGreen">#007A33</color>
+    <color name="BostonWhite">#FFFFFF</color>
 
-    <!--Charlotte Hornets Color:-->
-    <color name="hornetsPurple">#1D1160</color>
-    <color name="teal">#00788C</color>
-    <color name="hornetsGrey">#A1A1A4</color>
 
-    <!--Chicago Bulls Color:-->
-    <color name="bullsRed">#CE1141</color>
-    <color name="bullsBlack">#000000</color>
+    <!--Brooklyn Nets Color-->
+    <color name="NetsBlack">#010101</color>
+    <color name="NetsWhite">#FFFFFF</color>
+
+
+    <!--Charlotte Hornets Color-->
+    <color name="Teal">#00778B</color>
+    <color name="HornetsDarkPurple">#211747</color>
+    <color name="HornetsWhite">#FFFFFF</color>
+
+
+    <!--Chicago Bulls Color-->
+    <color name="BullsRed">#BA0C2F</color>
+    <color name="BullsBlack">#010101</color>
+    <color name="BullsWhite">#FFFFFF</color>
+
+
+    <!--Cleveland Cavaliers Color-->
+    <color name="Wine">#6F263D</color>
+    <color name="CavaliersGold">#FFB81C</color>
+    <color name="CavaliersNavy">#041E42</color>
+    <color name="CavaliersWhite">#FFFFFF</color>
+
+
+    <!--Dallas Mavericks Color-->
+    <color name="MavericksRoyalBlue">#0050B5</color>
+    <color name="MavericksNavy">#0C2340</color>
+    <color name="MavericksSilver">#8D9093</color>
+    <color name="MavericksWhite">#FFFFFF</color>
+
+
+    <!--Denver Nuggets Color-->
+    <color name="NuggetsMidnightBlue">#0C2340</color>
+    <color name="NuggetsFlatironsRed">#862633</color>
+    <color name="NuggetsSunshineYellow">#FFC72C</color>
+    <color name="NuggetsWhite">#FFFFFF</color>
+
+
+    <!--Detroit Pistons Color-->
+    <color name="PistonsRoyalBlue">#1D4289</color>
+    <color name="PistonsRed">#C8102E</color>
+    <color name="PistonsWhite">#FFFFFF</color>
+
+
+    <!--Golden State Warriors Color-->
+    <color name="WarriorsRoyalBlue">#1D4289</color>
+    <color name="WarriorsYellow">#FFC72C</color>
+    <color name="WarriorsWhite">#FFFFFF</color>
+
+
+    <!--Houston Rockets Color-->
+    <color name="RocketsRed">#BA0C2F</color>
+    <color name="RocketsBlack">#010101</color>
+    <color name="RocketsGray">#9EA2A2</color>
+    <color name="RocketsWhite">#FFFFFF</color>
+
+
+    <!--Indiana Pacers Color-->
+    <color name="PacersNavy">#041E42</color>
+    <color name="PacersGold">#FFC72C</color>
+    <color name="PacersWhite">#FFFFFF</color>
+
+
+    <!--Los Angeles Clippers Color-->
+    <color name="ClippersRoyalBlue">#1D4289</color>
+    <color name="ClippersRed">#C8102E</color>
+    <color name="ClippersWhite">#FFFFFF</color>
+
+
+    <!--Los Angeles Lakers Color-->
+    <color name="LakersRoyalPurple">#582C83</color>
+    <color name="LakersGold">#FFC72C</color>
+    <color name="LakersWhite">#FFFFFF</color>
+
+
+    <!--Memphis Grizzlies Color-->
+    <color name="MemphisMidnightBlue">#0C2340</color>
+    <color name="BealeStreetBlue">#7D9CC0</color>
+    <color name="GrizzliesGold">#FFC72C</color>
+    <color name="GrizzliesWhite">#FFFFFF</color>
+
+
+    <!--Miami Heat Color-->
+    <color name="HeatBlack">#010101</color>
+    <color name="HeatDeepRed">#862633</color>
+    <color name="HeatDarkYellow">#FFA400</color>
+    <color name="HeatWhite">#FFFFFF</color>
+
+
+    <!--Milwaukee Bucks Color-->
+    <color name="GoodLandGreen">#2C5234</color>
+    <color name="CreamCityCream">#DDCBA4</color>
+    <color name="BucksWhite">#FFFFFF</color>
+
+
+    <!--Minnesota Timberwolves Color-->
+    <color name="MidnightBlue">#0C2340</color>
+    <color name="LakeBlue">#236192</color>
+    <color name="AuroraGreen">#78BE21</color>
+    <color name="MoonlightGray">#9EA2A2</color>
+    <color name="FrostWhite">#FFFFFF</color>
+
+
+    <!--New Orleans Pelicans Color-->
+    <color name="DarkBlue">#0C2340</color>
+    <color name="Gold">#B9975B</color>
+    <color name="PelicansRed">#C8102E</color>
+    <color name="PelicansWhite">#FFFFFF</color>
+
+
+    <!--New York Knicks Color-->
+    <color name="KnicksRoyalBlue">#003DA5</color>
+    <color name="Orange">#FF6720</color>
+    <color name="KnicksSilver">#B1B3B3</color>
+    <color name="KnicksWhite">#FFFFFF</color>
+
+
+    <!--Oklahoma City Thunder Color-->
+    <color name="StrongBlue">#0072CE</color>
+    <color name="ThunderNavy">#041E42</color>
+    <color name="Sunset">#F9423A</color>
+    <color name="Yellow">#FFB81C</color>
+    <color name="ThunderWhite">#FFFFFF</color>
+
+
+    <!--Orlando Magic Color-->
+    <color name="LightRoyal">#0057B7</color>
+    <color name="MagicBlack">#010101</color>
+    <color name="MagicSilver">#8D9093</color>
+    <color name="MagicWhite">#FFFFFF</color>
+
+
+    <!--Philadelphia 76ers Color-->
+    <color name="RoyalBlue">#003DA5</color>
+    <color name="PhiladelphiaRed">#D50032</color>
+    <color name="PhiladelphiaWhite">#FFFFFF</color>
+
+
+    <!--Phoenix Suns Color-->
+    <color name="DarkPurple">#211747</color>
+    <color name="BurntOrange">#CB6015</color>
+    <color name="DarkOrange">#A9431E</color>
+    <color name="LightGray">#B1B3B3</color>
+    <color name="SunsWhite">#FFFFFF</color>
+
+
+    <!--Portland Trail Blazers Color-->
+    <color name="TrailBlack">#010101</color>
+    <color name="TrailRed">#C8102E</color>
+    <color name="TrailWhite">#FFFFFF</color>
+
+
+    <!--Sacramento Kings Color-->
+    <color name="RoyalPurple">#582C83</color>
+    <color name="Granite">#5B6770</color>
+    <color name="KingsWhite">#FFFFFF</color>
+
+
+    <!--San Antonio Spurs Color-->
+    <color name="SpursBlack">#010101</color>
+    <color name="SpursSilver">#8D9093</color>
+    <color name="SpursWhite">#FFFFFF</color>
+
+
+    <!--Toronto Raptors Color-->
+    <color name="RaptorsRed">#BA0C2F</color>
+    <color name="Black">#010101</color>
+    <color name="RaptorsSilver">#888B8D</color>
+    <color name="RaptorsWhite">#FFFFFF</color>
+
+
+    <!--Utah Jazz Color-->
+    <color name="JazzNavy">#0C2340</color>
+    <color name="DarkGreen">#2C5234</color>
+    <color name="DarkYellow">#FFA400</color>
+    <color name="JazzWhite">#FFFFFF</color>
+
+
+    <!--Washington Wizards Color-->
+    <color name="Red">#C8102E</color>
+    <color name="Navy">#0C2340</color>
+    <color name="Silver">#8D9093</color>
+    <color name="White">#FFFFFF</color>
 
 
 
