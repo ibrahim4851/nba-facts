@@ -1,8 +1,13 @@
 package com.ibrahim.nbafacts.adapter
 
+import android.annotation.SuppressLint
+import android.graphics.Color.RED
+import android.graphics.drawable.Drawable
+import android.graphics.drawable.GradientDrawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
@@ -31,8 +36,26 @@ class PlayerAdapter(val playerList: ArrayList<Player>) :
         return PlayerViewHolder(view)
     }
 
+    private fun <T : Drawable> T.mutate(function: T.() -> Unit) {
+        mutate()
+        function()
+    }
+
+    @SuppressLint("ResourceAsColor")
     override fun onBindViewHolder(holder: PlayerViewHolder, position: Int) {
         holder.view.player = playerList[position]
+        val holderBackground = holder.view.root.playerItemTeamColorFirst as GradientDrawable
+        when(playerList[position].team.abbreviation){
+            "BOS"->holderBackground.mutate {
+                //color =
+            }
+            //"ATL"->holderBackground.setBackgroundColor(ContextCompat.getColor(holder.view.root.context, R.color.TorchRed))
+        }
+        /*
+        if (playerList[position].team.abbreviation == "BOS"){
+            holder.view.root.setBackgroundColor(R.color.CelticGreen)
+        }
+         */
         holder.view.listener = this
         /*
         val firstName = playerList[position].firstName

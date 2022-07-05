@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="player"
             type="com.ibrahim.nbafacts.model.Player" />
@@ -13,10 +14,10 @@
     </data>
 
     <LinearLayout
-        android:onClick="@{listener::onItemClick}"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:onClick="@{listener::onItemClick}"
+        android:orientation="horizontal"
         android:paddingLeft="10dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp">
@@ -25,32 +26,63 @@
             android:id="@+id/playerId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:text="@{player.id}"/>
+            android:text="@{player.id}"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/playerHeight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:text="@{player.heightFeet}"/>
+            android:text="@{player.heightFeet}"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Michael Jordan"
             android:text="@{player.firstName}"
             android:textSize="20dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:text="Michael Jordan" />
 
         <TextView
             android:id="@+id/subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{player.team.fullName}"
-            tools:text="Cleveland Cavaliers"
-            android:textSize="15dp" />
+            android:textSize="15dp"
+            tools:text="Cleveland Cavaliers" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/playerItemTeamColorFirst"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:background="@drawable/player_team_color"
+                android:layout_marginRight="5dp"/>
+
+            <ImageView
+                android:id="@+id/playerItemTeamColorSecond"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:background="@drawable/player_team_color" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
