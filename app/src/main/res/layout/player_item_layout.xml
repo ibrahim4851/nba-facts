@@ -41,30 +41,30 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{player.firstName}"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            tools:text="Michael Jordan" />
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{player.firstName}"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                tools:text="Michael Jordan" />
 
-        <TextView
-            android:id="@+id/subtitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{player.team.fullName}"
-            android:textSize="15dp"
-            tools:text="Cleveland Cavaliers" />
+            <TextView
+                android:id="@+id/subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{player.team.fullName}"
+                android:textSize="15dp"
+                tools:text="Cleveland Cavaliers" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="right"
             android:layout_margin="10dp"
+            android:gravity="right"
             android:orientation="horizontal">
 
             <ImageView
@@ -72,15 +72,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
-                android:background="@drawable/player_team_color"
-                android:layout_marginRight="5dp"/>
+                android:layout_marginRight="5dp"
+                android:src="@drawable/player_team_color" />
 
             <ImageView
                 android:id="@+id/playerItemTeamColorSecond"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
-                android:background="@drawable/player_team_color" />
+                android:src="@drawable/player_team_color" />
 
         </LinearLayout>
 

@@ -1,13 +1,18 @@
 package com.ibrahim.nbafacts.adapter
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.content.res.ColorStateList
 import android.graphics.Color.RED
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.GradientDrawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.ContextCompat
+import androidx.core.widget.ImageViewCompat
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
@@ -22,6 +27,8 @@ class PlayerAdapter(val playerList: ArrayList<Player>) :
     RecyclerView.Adapter<PlayerAdapter.PlayerViewHolder>(), ClickListener {
 
     class PlayerViewHolder(var view: PlayerItemLayoutBinding) : RecyclerView.ViewHolder(view.root)
+
+    private lateinit var holder: PlayerViewHolder
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlayerViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -44,12 +51,11 @@ class PlayerAdapter(val playerList: ArrayList<Player>) :
     @SuppressLint("ResourceAsColor")
     override fun onBindViewHolder(holder: PlayerViewHolder, position: Int) {
         holder.view.player = playerList[position]
-        val holderBackground = holder.view.root.playerItemTeamColorFirst as GradientDrawable
+        val holderBackground = holder.view.root.playerItemTeamColorFirst
+        val holderBackground2 = holder.view.root.playerItemTeamColorSecond
         when(playerList[position].team.abbreviation){
-            "BOS"->holderBackground.mutate {
-                //color =
-            }
-            //"ATL"->holderBackground.setBackgroundColor(ContextCompat.getColor(holder.view.root.context, R.color.TorchRed))
+            "BOS"->setDrawableColors(R.color.BostonWhite, R.color.CelticGreen, holderBackground, holderBackground2)
+            "ATL"->holderBackground.setBackgroundColor(ContextCompat.getColor(holder.view.root.context, R.color.TorchRed))
         }
         /*
         if (playerList[position].team.abbreviation == "BOS"){
@@ -57,33 +63,20 @@ class PlayerAdapter(val playerList: ArrayList<Player>) :
         }
          */
         holder.view.listener = this
-        /*
-        val firstName = playerList[position].firstName
-        val heightFeet = playerList[position].heightFeet
-        val heightInches = playerList[position].heightInches
-        val lastName = playerList[position].lastName
-        val playerPosition = playerList[position].position
-        val weightPounds = playerList[position].weightPounds
-        val teamName = playerList[position].team.fullName
 
-        val action = PlayerFragmentDirections.actionPlayerFragmentToPlayerDetailsFragment(
-            firstName,
-            lastName,
-            heightFeet,
-            heightInches,
-            playerPosition,
-            teamName,
-            weightPounds
-        )
-        holder.view.setOnClickListener {
-            Navigation.findNavController(it).navigate(action)
-        }
-         */
+
+    }
+
+    fun setDrawableColors(color1: Int, color2: Int, drawable1:ImageView, drawable2: ImageView) {
+        drawable1.setColorFilter(ContextCompat.getColor(holder.view.root.context, color1))
+        drawable2.setColorFilter(ContextCompat.getColor(holder.view.root.context, color2))
     }
 
     override fun getItemCount(): Int {
         return playerList.size
     }
+
+
 
     fun updatePlayerList(newPlayerList: List<Player>) {
         playerList.clear()
