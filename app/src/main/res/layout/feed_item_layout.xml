@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/feed_item_background">
 
     <data>
 
@@ -13,6 +14,7 @@
     </data>
 
     <RelativeLayout
+        android:layout_margin="30dp"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:onClick="@{listener::onItemClick}">

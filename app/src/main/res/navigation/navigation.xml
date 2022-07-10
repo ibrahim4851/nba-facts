@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/feedFragment"
         android:name="com.ibrahim.nbafacts.view.FeedFragment"
-        android:label="NBA Facts" >
+        android:label="Facts">
         <action
             android:id="@+id/action_feedFragment_to_playerFragment"
             app:destination="@id/playerFragment"
@@ -23,7 +23,7 @@
     <fragment
         android:id="@+id/statsFragment"
         android:name="com.ibrahim.nbafacts.view.GamesFragment"
-        android:label="Statistics"
+        android:label="Games"
         tools:layout="@layout/fragment_stats" />
     <fragment
         android:id="@+id/playerFragment"

@@ -16,6 +16,12 @@
     <color name="dark">#c6b7b5</color>
 
     <!-- ******************************************************************* -->
+
+    <!--NBA Color-->
+    <color name="NBA1">#1d428a</color>
+    <color name="NBA2">#c8102e</color>
+    <color name="NBA3">#ffffff </color>
+
     <!--Atlanta Hawks Color-->
     <color name="ATL">#C8102E</color>
     <color name="ATL2">#FFC72C</color>
