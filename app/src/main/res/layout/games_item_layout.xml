@@ -50,15 +50,19 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="@{game.homeTeam.fullName}"
-                        android:textStyle="bold" />
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        tools:text="132" />
 
                     <TextView
                         android:id="@+id/homeTeamScore"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="@{game.homeScore}"
-                        android:textStyle="bold" />
+                        android:textSize="25dp"
+                        android:textStyle="bold"
+                        tools:text="La Clippers" />
 
                 </LinearLayout>
 
@@ -80,14 +84,17 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="@{game.awayTeam.fullName}"
-                        android:textStyle="bold" />
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        tools:text="132" />
 
                     <TextView
                         android:id="@+id/awayTeamScore"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="@{game.awayScore}"
+                        android:textSize="25dp"
                         android:textStyle="bold"
                         tools:text="La Clippers" />
 
