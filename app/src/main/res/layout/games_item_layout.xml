@@ -35,74 +35,91 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginRight="35dp"
+                    android:gravity="center"
                     android:orientation="vertical">
 
                     <ImageView
                         android:id="@+id/homeTeamLogo"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
+                        android:layout_gravity="center"
                         android:downloadOuterSource="@{game.homeTeam.abbreviation}" />
 
                     <TextView
                         android:id="@+id/homeTeamName"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@{game.homeTeam.fullName}"
-                        android:textSize="20dp"
-                        android:textStyle="bold"
-                        tools:text="132" />
-
-                    <TextView
-                        android:id="@+id/homeTeamScore"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="@{game.homeScore}"
+                        android:text="@{game.homeTeam.name}"
                         android:textSize="25dp"
                         android:textStyle="bold"
-                        tools:text="La Clippers" />
+                        tools:text="LA Clippers" />
+
+                    <TextView
+                        android:id="@+id/homeTeamScore"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:text="@{game.homeScore}"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        tools:text="132" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginLeft="35dp"
+                    android:gravity="center"
                     android:orientation="vertical">
 
                     <ImageView
                         android:id="@+id/awayTeamLogo"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
+                        android:layout_gravity="center"
                         android:downloadOuterSource="@{game.awayTeam.abbreviation}" />
 
                     <TextView
                         android:id="@+id/awayTeamName"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@{game.awayTeam.fullName}"
-                        android:textSize="20dp"
-                        android:textStyle="bold"
-                        tools:text="132" />
-
-                    <TextView
-                        android:id="@+id/awayTeamScore"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="@{game.awayScore}"
+                        android:text="@{game.awayTeam.name}"
                         android:textSize="25dp"
                         android:textStyle="bold"
-                        tools:text="La Clippers" />
+                        tools:text="LA Clippers" />
+
+                    <TextView
+                        android:id="@+id/awayTeamScore"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@{game.awayScore}"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        tools:text="132" />
 
                 </LinearLayout>
 
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:gravity="center"
+                    android:textSize="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:trimmmedDate="@{game.date}"
+                    tools:text="12/04/2021"/>
+            </LinearLayout>
 
         </LinearLayout>
 

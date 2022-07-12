@@ -3,6 +3,7 @@ package com.ibrahim.nbafacts.util
 import android.content.Context
 import android.util.Log
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import androidx.lifecycle.MutableLiveData
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
@@ -65,4 +66,14 @@ fun ImageView.downloadTeamLogo(abbreviation: String?, progressDrawable: Circular
 @BindingAdapter("android:downloadOuterSource")
 fun downloadOuterSource(view: ImageView, abbreviation: String?) {
     view.downloadTeamLogo(abbreviation, placeHolderProgressBar(view.context))
+}
+
+@BindingAdapter("android:trimmmedDate")
+fun trimmedDate(view: TextView, date: String?){
+    view.dateTrimmer(date)
+}
+
+fun TextView.dateTrimmer(date: String?){
+    val trimmedDate = date?.dropLast(14)
+    text = trimmedDate
 }
