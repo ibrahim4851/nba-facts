@@ -22,7 +22,7 @@
     <fragment
         android:id="@+id/statsFragment"
         android:name="com.ibrahim.nbafacts.view.GamesFragment"
-        tools:layout="@layout/fragment_stats" />
+        tools:layout="@layout/fragment_games" />
     <fragment
         android:id="@+id/playerFragment"
         android:name="com.ibrahim.nbafacts.view.PlayerFragment"

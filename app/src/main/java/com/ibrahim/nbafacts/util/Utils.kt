@@ -52,7 +52,6 @@ fun ImageView.downloadTeamLogo(abbreviation: String?, progressDrawable: Circular
     val url =
         "https://i.cdn.turner.com/nba/nba/.element/img/1.0/teamsites/logos/teamlogos_500x500/" +
                 abbreviation?.lowercase() + ".png"
-    Log.i("resim", url)
     val options = RequestOptions()
         .placeholder(progressDrawable)
         .error(R.mipmap.ic_launcher_round)

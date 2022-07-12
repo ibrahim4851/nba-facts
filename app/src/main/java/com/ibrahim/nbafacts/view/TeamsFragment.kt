@@ -13,7 +13,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.ibrahim.nbafacts.R
 import com.ibrahim.nbafacts.adapter.TeamsAdapter
 import com.ibrahim.nbafacts.viewmodel.TeamsViewModel
-import kotlinx.android.synthetic.main.fragment_stats.*
+import kotlinx.android.synthetic.main.fragment_teams.*
 import kotlinx.android.synthetic.main.fragment_teams.*
 import kotlinx.android.synthetic.main.page_picker_layout.view.*
 

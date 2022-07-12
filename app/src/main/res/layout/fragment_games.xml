@@ -29,6 +29,45 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <Button
+                    android:id="@+id/previousGame"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="2"
+                    app:icon="@drawable/ic_baseline_arrow_back_24"/>
+
+                <TextView
+                    android:id="@+id/gameCurrentPage"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:height="50dp"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:text="124"
+                    android:focusable="true" />
+
+                <Button
+                    android:id="@+id/nextGame"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="2"
+                    app:icon="@drawable/ic_baseline_arrow_forward_24" />
+
+            </LinearLayout>
+
             <TextView
                 android:id="@+id/gamesError"
                 android:layout_width="wrap_content"

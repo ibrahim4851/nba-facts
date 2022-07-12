@@ -19,6 +19,7 @@ class GamesViewModel(application: Application): BaseViewModel(application) {
     val gamesLoading = MutableLiveData<Boolean>()
     val gamesError = MutableLiveData<Boolean>()
     var page = MutableLiveData<Int>()
+    var totalPage = MutableLiveData<Int>()
 
     fun getData(){
         gamesLoading.value = true
@@ -28,6 +29,8 @@ class GamesViewModel(application: Application): BaseViewModel(application) {
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribeWith(object : DisposableSingleObserver<GameMetaData>(){
                             override fun onSuccess(t: GameMetaData) {
+                                page.value = t.meta.currentPage.toInt()
+                                totalPage.value = t.meta.totalPages.toInt()
                                 gamesList.value = t.game
                                 gamesError.value = false
                                 gamesLoading.value = false
