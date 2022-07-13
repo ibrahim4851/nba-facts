@@ -13,6 +13,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.ibrahim.nbafacts.R
 import com.ibrahim.nbafacts.adapter.TeamsAdapter
 import com.ibrahim.nbafacts.viewmodel.TeamsViewModel
+import kotlinx.android.synthetic.main.fragment_games.*
 import kotlinx.android.synthetic.main.fragment_teams.*
 import kotlinx.android.synthetic.main.fragment_teams.*
 import kotlinx.android.synthetic.main.page_picker_layout.view.*
@@ -46,13 +47,23 @@ class TeamsFragment : Fragment() {
             observeLiveData()
             swipeRefreshTeam.isRefreshing = false
         }
+        teamCurrentPage.setOnClickListener {
+            openBottomDialog()
+        }
         nextTeam.setOnClickListener {
-            viewModel.page.value?.let {
-                viewModel.page.value = viewModel.page.value?.inc()
+            if (viewModel.page.value == viewModel.totalPage.value){
+                viewModel.page.value = 1
                 teamCurrentPage.text = viewModel.page.value.toString()
+                viewModel.getData()
+                observeLiveData()
             }
-            viewModel.getData()
-            observeLiveData()
+            else{
+                viewModel.page.value?.let {
+                    viewModel.page.value = viewModel.page.value?.inc()
+                    teamCurrentPage.text = viewModel.page.value.toString()
+                    viewModel.getData()
+                    observeLiveData()}
+            }
         }
         previousTeam.setOnClickListener {
             viewModel.page.value?.let {
@@ -112,6 +123,13 @@ class TeamsFragment : Fragment() {
                 }else{
                     teamsLoading.visibility = View.GONE
                 }
+            }
+        })
+        viewModel.page.observe(viewLifecycleOwner, Observer { page ->
+            page?.let {
+                teamCurrentPage.setText(viewModel.page.value.toString())
+            }?:run{
+                teamCurrentPage.setText("")
             }
         })
     }
