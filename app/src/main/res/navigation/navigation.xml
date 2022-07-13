@@ -40,15 +40,7 @@
         android:name="com.ibrahim.nbafacts.view.PlayerDetailsFragment"
         tools:layout="@layout/fragment_player_details">
         <argument
-            android:name="playerName"
-            app:argType="string"
-            app:nullable="true" />
-        <argument
-            android:name="heightFeet"
-            app:argType="string"
-            app:nullable="true" />
-        <argument
-            android:name="playerTeamName"
+            android:name="playerId"
             app:argType="string"
             app:nullable="true" />
     </fragment>

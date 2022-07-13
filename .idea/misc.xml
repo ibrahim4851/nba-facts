@@ -17,6 +17,7 @@
         <entry key="app/src/main/res/drawable/ic_nba_seeklogo_com.xml" value="0.188" />
         <entry key="app/src/main/res/drawable/player_team_color.xml" value="0.188" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/bottom_drawer_layout.xml" value="0.4010416666666667" />
         <entry key="app/src/main/res/layout/feed_item_layout.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_feed.xml" value="0.2" />
         <entry key="app/src/main/res/layout/fragment_games.xml" value="0.4036458333333333" />

@@ -85,15 +85,9 @@ class PlayerAdapter(val playerList: ArrayList<Player>) :
     }
 
     override fun onItemClick(view: View) {
-        val pHeight = view.playerHeight.text.toString()
-        val pName = view.title.text.toString()
-        val pTeam = view.subtitle.text.toString()
-        println("values to pass:")
-        println(pHeight + pName + pTeam)
+        val playerId = view.playerId.text.toString()
         val action = PlayerFragmentDirections.actionPlayerFragmentToPlayerDetailsFragment(
-            pName,
-            pHeight,
-            pTeam
+            playerId
         )
         Navigation.findNavController(view).navigate(action)
     }
