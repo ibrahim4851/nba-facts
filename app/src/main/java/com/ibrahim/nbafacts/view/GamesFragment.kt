@@ -54,15 +54,17 @@ class GamesFragment : Fragment() {
         nextGame.setOnClickListener {
             if (viewModel.page.value == viewModel.totalPage.value){
                 viewModel.page.value = 1
+                gameCurrentPage.text = viewModel.page.value.toString()
+                viewModel.getData()
                 observeLiveData()
             }
             else{
             viewModel.page.value?.let {
                 viewModel.page.value = viewModel.page.value?.inc()
                 gameCurrentPage.text = viewModel.page.value.toString()
+                viewModel.getData()
+                observeLiveData()}
             }
-            viewModel.getData()
-            observeLiveData()}
         }
 
         previousGame.setOnClickListener {
