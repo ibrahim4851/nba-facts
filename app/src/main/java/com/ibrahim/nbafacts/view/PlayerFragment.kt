@@ -15,6 +15,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.ibrahim.nbafacts.R
 import com.ibrahim.nbafacts.adapter.PlayerAdapter
 import com.ibrahim.nbafacts.viewmodel.PlayersViewModel
+import kotlinx.android.synthetic.main.fragment_games.*
 import kotlinx.android.synthetic.main.fragment_player.*
 import kotlinx.android.synthetic.main.page_picker_layout.*
 import kotlinx.android.synthetic.main.page_picker_layout.view.*
@@ -24,7 +25,7 @@ class PlayerFragment : Fragment() {
 
     private lateinit var viewModel: PlayersViewModel
     private val playerAdapter = PlayerAdapter(arrayListOf())
-    private lateinit var bottomSheetView : View
+    private lateinit var bottomSheetView: View
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,12 +52,20 @@ class PlayerFragment : Fragment() {
         }
 
         nextPlayer.setOnClickListener {
-            viewModel.page.value?.let {
-                viewModel.page.value = viewModel.page.value?.inc()
+            if (viewModel.page.value == viewModel.totalPage.value) {
+                viewModel.page.value = 1
                 playerCurrentPage.text = viewModel.page.value.toString()
+                viewModel.getData()
+                observeLiveData()
+            } else {
+
+                viewModel.page.value?.let {
+                    viewModel.page.value = viewModel.page.value?.inc()
+                    playerCurrentPage.text = viewModel.page.value.toString()
+                }
+                viewModel.getData()
+                observeLiveData()
             }
-            viewModel.getData()
-            observeLiveData()
         }
 
         previousPlayer.setOnClickListener {
@@ -88,7 +97,7 @@ class PlayerFragment : Fragment() {
 
     }
 
-    fun openBottomDialog(){
+    fun openBottomDialog() {
         val dialog = BottomSheetDialog(requireActivity())
         bottomSheetView.pagePicker.minValue = 1
         dialog!!.setCancelable(true)
@@ -144,7 +153,7 @@ class PlayerFragment : Fragment() {
         viewModel.page.observe(viewLifecycleOwner, Observer { page ->
             page?.let {
                 playerCurrentPage.setText(viewModel.page.value.toString())
-            }?:run{
+            } ?: run {
                 playerCurrentPage.setText("")
             }
         })
