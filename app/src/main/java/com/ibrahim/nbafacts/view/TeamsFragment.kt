@@ -1,20 +1,19 @@
 package com.ibrahim.nbafacts.view
 
+import GridSpacingItemDecoration
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.ibrahim.nbafacts.R
 import com.ibrahim.nbafacts.adapter.TeamsAdapter
 import com.ibrahim.nbafacts.viewmodel.TeamsViewModel
-import kotlinx.android.synthetic.main.fragment_games.*
-import kotlinx.android.synthetic.main.fragment_teams.*
 import kotlinx.android.synthetic.main.fragment_teams.*
 import kotlinx.android.synthetic.main.page_picker_layout.view.*
 
@@ -40,7 +39,11 @@ class TeamsFragment : Fragment() {
         bottomSheetView = layoutInflater.inflate(R.layout.page_picker_layout, null, false)
         viewModel.page = MutableLiveData(1)
         viewModel.getData()
-        teamsRecView.layoutManager = LinearLayoutManager(context)
+        teamsRecView.layoutManager = GridLayoutManager(context, 2, GridLayoutManager.VERTICAL, false)
+        val spanCount = 2
+        val spacing = 100
+        val includeEdge = true
+        teamsRecView.addItemDecoration(GridSpacingItemDecoration(spanCount, spacing, includeEdge))
         teamsRecView.adapter = teamsAdapter
         observeLiveData()
         swipeRefreshTeam.setOnRefreshListener {
