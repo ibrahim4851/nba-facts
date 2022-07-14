@@ -58,8 +58,6 @@ class PlayersViewModel(application: Application) : BaseViewModel(application) {
                 .subscribeWith(object : DisposableSingleObserver<PlayerMetaData>() {
                     override fun onSuccess(t: PlayerMetaData) {
                         playersList.value = t.player
-                        Log.i("totalcount", t.meta.totalCount)
-                        Log.i("searchplayer", searchQuery.value.toString())
                         page.value = t.meta.currentPage.toInt()
                         totalPage.value = t.meta.totalPages.toInt()
                         playersError.value = false
