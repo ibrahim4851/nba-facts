@@ -6,19 +6,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import com.ibrahim.nbafacts.R
 import com.ibrahim.nbafacts.databinding.FragmentPlayerBinding
 import com.ibrahim.nbafacts.databinding.FragmentPlayerDetailsBinding
 import com.ibrahim.nbafacts.databinding.PlayerItemLayoutBinding
+import com.ibrahim.nbafacts.viewmodel.PlayerDetailsViewModel
 import kotlinx.android.synthetic.main.fragment_player_details.*
 
 class PlayerDetailsFragment : Fragment() {
 
-    private lateinit var pName : String
-    private lateinit var heightFeet : String
-    //private var position = ""
-    //private var weightPounds = ""
-    private lateinit var teamName : String
+    private lateinit var viewModel : PlayerDetailsViewModel
+    private var playerId = ""
     private lateinit var playerDataBinding : FragmentPlayerDetailsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,25 +29,27 @@ class PlayerDetailsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         playerDataBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_player_details, container, false)
         return playerDataBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val args = PlayerDetailsFragmentArgs
         arguments?.let {
-            pName = args.fromBundle(it).playerName.toString()
-            heightFeet = args.fromBundle(it).heightFeet.toString()
-            //heightInches = args.fromBundle(it).heightInches.toString()
-            //lastName = args.fromBundle(it).playerLastName.toString()
-            //position = args.fromBundle(it).position.toString()
-            //weightPounds = args.fromBundle(it).weight.toString()
-            teamName = args.fromBundle(it).playerTeamName.toString()
+            playerId = PlayerDetailsFragmentArgs.fromBundle(it).playerId.toString()
         }
-        //detailsPlayerName.text = pName
-        //detailsPlayerHeight.text = heightFeet
-        //detailsPlayerTeam.text = teamName
+        viewModel = ViewModelProviders.of(this).get(PlayerDetailsViewModel::class.java)
+        viewModel.playerId.value = playerId
+        viewModel.getData()
+        observeLiveData()
     }
+
+    private fun observeLiveData() {
+        viewModel.player.observe(viewLifecycleOwner, Observer { player->
+            player?.let {
+                playerDataBinding.selectedPlayer = player
+            }
+        })
+    }
+
 }

@@ -13,10 +13,10 @@ data class Player(
     val lastName: String,
 
     @SerializedName("height_feet")
-    val heightFeet: String,
+    val heightFeet: Int,
 
     @SerializedName("height_inches")
-    val heightInches: String,
+    val heightInches: Int,
 
     @SerializedName("position")
     val position: String,
@@ -25,7 +25,7 @@ data class Player(
     val team: Team,
 
     @SerializedName("weight_pounds")
-    val weightPounds: String
+    val weightPounds: Int
 )
 
 

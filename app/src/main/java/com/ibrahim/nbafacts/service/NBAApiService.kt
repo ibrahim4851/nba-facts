@@ -1,10 +1,6 @@
 package com.ibrahim.nbafacts.service
 
-import androidx.lifecycle.MutableLiveData
-import com.ibrahim.nbafacts.model.GameMetaData
-import com.ibrahim.nbafacts.model.MetaData
-import com.ibrahim.nbafacts.model.PlayerMetaData
-import com.ibrahim.nbafacts.model.TeamMetaData
+import com.ibrahim.nbafacts.model.*
 import io.reactivex.Single
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -35,6 +31,10 @@ class NBAApiService {
 
     fun getTeams(page: String): Single<TeamMetaData>{
         return api.getTeams("15", page)
+    }
+
+    fun getSinglePlayer(playerId: String): Single<Player>{
+        return api.getPlayerById(playerId)
     }
 
 }
