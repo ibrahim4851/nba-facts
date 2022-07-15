@@ -17,7 +17,7 @@
 
         <TextView
             android:id="@+id/selectedPlayerName"
-            android:text="@{selectedPlayer.firstName + selectedPlayer.lastName}"
+            android:text="@{selectedPlayer.firstName + ` ` + selectedPlayer.lastName}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="LeBron James"

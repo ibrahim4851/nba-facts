@@ -27,6 +27,7 @@ class PlayerDetailsViewModel(application: Application): BaseViewModel(applicatio
                 .subscribeWith(object : DisposableSingleObserver<Player>() {
                     override fun onSuccess(t: Player) {
                         player.value = t
+                        Log.i("kilo", t.heightFeet.toString())
                     }
 
                     override fun onError(e: Throwable) {
