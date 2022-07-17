@@ -15,23 +15,34 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/selectedPlayerName"
-            android:text="@{selectedPlayer.firstName + ` ` + selectedPlayer.lastName}"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="LeBron James"
-            android:gravity="center_horizontal"
-            android:textStyle="bold"
-            android:textSize="35dp"/>
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/selectedPlayerName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@{selectedPlayer.firstName + ` ` + selectedPlayer.lastName}"
+                android:textSize="35dp"
+                android:textStyle="bold"
+                tools:text="LeBron James" />
+
+            <ImageView
+                android:id="@+id/playerPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="400dp" />
+        </LinearLayout>
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_behavior="@string/bottom_sheet_behavior"
             android:background="#FCF8E8"
             app:behavior_hideable="false"
-            app:behavior_peekHeight="125dp">
+            app:behavior_peekHeight="125dp"
+            app:layout_behavior="@string/bottom_sheet_behavior">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -73,11 +84,11 @@
 
                             <TextView
                                 android:id="@+id/selectedPlayerHeightFt"
-                                android:text="@{selectedPlayer.heightFeet +`'`}"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center_horizontal"
                                 android:padding="10dp"
+                                android:text="@{selectedPlayer.heightFeet +`'`}"
                                 android:textSize="18dp"
                                 android:textStyle="bold"
                                 tools:text="6'" />
@@ -111,9 +122,9 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center_horizontal"
                                 android:padding="10dp"
+                                android:text="@{selectedPlayer.heightInches + `''`}"
                                 android:textSize="18dp"
                                 android:textStyle="bold"
-                                android:text="@{selectedPlayer.heightInches + `''`}"
                                 tools:text="8''" />
                         </LinearLayout>
 
@@ -157,23 +168,23 @@
 
                 <TextView
                     android:id="@+id/selectedPlayerPosition"
-                    android:text="@{`Position: `+selectedPlayer.position}"
-                    android:layout_margin="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="@{`Position: `+selectedPlayer.position}"
                     android:textSize="20dp"
                     android:textStyle="bold"
-                    tools:text="Position: F"/>
+                    tools:text="Position: F" />
 
                 <TextView
                     android:id="@+id/selectedPlayerTeam"
-                    android:text="@{`Team: ` + selectedPlayer.team.fullName}"
-                    android:layout_margin="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="@{`Team: ` + selectedPlayer.team.fullName}"
                     android:textSize="20dp"
                     android:textStyle="bold"
-                    tools:text="Team: Los Angeles Lakers"/>
+                    tools:text="Team: Los Angeles Lakers" />
 
             </LinearLayout>
 
