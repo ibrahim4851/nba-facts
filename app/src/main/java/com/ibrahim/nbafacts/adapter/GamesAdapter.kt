@@ -1,6 +1,7 @@
 package com.ibrahim.nbafacts.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -9,7 +10,7 @@ import com.ibrahim.nbafacts.databinding.GamesItemLayoutBinding
 import com.ibrahim.nbafacts.model.Game
 
 class GamesAdapter(val gamesList: ArrayList<Game>):
-RecyclerView.Adapter<GamesAdapter.GamesViewHolder>()
+RecyclerView.Adapter<GamesAdapter.GamesViewHolder>(), ClickListener
 {
 
 class GamesViewHolder(var view: GamesItemLayoutBinding): RecyclerView.ViewHolder(view.root)
@@ -38,6 +39,9 @@ class GamesViewHolder(var view: GamesItemLayoutBinding): RecyclerView.ViewHolder
         gamesList.clear()
         gamesList.addAll(newGamesList)
         notifyDataSetChanged()
+    }
+
+    override fun onItemClick(view: View) {
     }
 
 }
