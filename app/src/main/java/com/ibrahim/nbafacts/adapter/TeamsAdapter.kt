@@ -12,11 +12,10 @@ import com.ibrahim.nbafacts.model.Team
 import com.ibrahim.nbafacts.view.TeamsFragmentDirections
 import kotlinx.android.synthetic.main.team_item_layout.view.*
 
-class TeamsAdapter(val teamsList : ArrayList<Team>):
-RecyclerView.Adapter<TeamsAdapter.TeamsViewHolder>(), ClickListener
-{
+class TeamsAdapter(val teamsList: ArrayList<Team>) :
+    RecyclerView.Adapter<TeamsAdapter.TeamsViewHolder>(), ClickListener {
 
-    class TeamsViewHolder(var view : TeamItemLayoutBinding): RecyclerView.ViewHolder(view.root)
+    class TeamsViewHolder(var view: TeamItemLayoutBinding) : RecyclerView.ViewHolder(view.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TeamsViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -38,7 +37,7 @@ RecyclerView.Adapter<TeamsAdapter.TeamsViewHolder>(), ClickListener
         return teamsList.size
     }
 
-    fun updateTeamsList(newTeamsList: List<Team>){
+    fun updateTeamsList(newTeamsList: List<Team>) {
         teamsList.clear()
         teamsList.addAll(newTeamsList)
         notifyDataSetChanged()
