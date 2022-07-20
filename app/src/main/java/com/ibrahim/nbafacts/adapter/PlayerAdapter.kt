@@ -44,12 +44,6 @@ class PlayerAdapter(val playerList: ArrayList<Player>) :
         return PlayerViewHolder(view)
     }
 
-    private fun <T : Drawable> T.mutate(function: T.() -> Unit) {
-        mutate()
-        function()
-    }
-
-
     @SuppressLint("ResourceAsColor")
     override fun onBindViewHolder(holder: PlayerViewHolder, position: Int) {
         holder.view.player = playerList[position]

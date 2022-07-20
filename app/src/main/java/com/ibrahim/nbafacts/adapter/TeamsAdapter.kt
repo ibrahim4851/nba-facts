@@ -1,5 +1,6 @@
 package com.ibrahim.nbafacts.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -44,6 +45,7 @@ class TeamsAdapter(val teamsList: ArrayList<Team>) :
     }
 
     override fun onItemClick(view: View) {
+        println("clicked")
         val teamId = view.teamId.text.toString()
         val action = TeamsFragmentDirections.actionTeamsFragmentToTeamDetailsFragment(teamId)
         Navigation.findNavController(view).navigate(action)
