@@ -11,6 +11,7 @@
 * DataBinding
 * Glide
 * Navigation
+* Pagination
 
 ## I will add these following features:
   * Clicking on RecyclerView items will send to another fragment that shows details about it (Each Fragment)
